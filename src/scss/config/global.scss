@@ -1,0 +1,96 @@
+@import "../smart-grid/smart-grid";
+
+// Вычисление rem
+:root {
+  font-size: 16px;
+
+}
+
+body {
+
+  .lock {
+      overflow: hidden;
+    }
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+  background-color: $whiteColor;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #000;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(#000, 20%);
+  border-radius: 10px;
+  background-color: #f9f9fd;
+}
+
+.wrapper {
+  min-height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.moduleGrid {
+  display: none;
+}
+
+.page {
+  @include adaptiveValue(margin-top, $headerMaxHeight, $headerMinHeight, 2);
+  flex: 1 1 auto;
+  // z-index: 5;
+  // overflow: auto;
+}
+
+// [class*="__container"] {
+//   max-width: 1170px + $mainOffset * 2; // 15px
+//   margin: 0 auto;
+//   padding: 0 $mainOffset; // 15px
+// }
+
+.g_container {
+  //@include wrapper(); // Штрина полотна + выравнивание по середине + отступы справа слева // @include
+  @include widthСanvas(); // Штрина полотна + выравнивание по середине + отступы справа слева // @include
+  @include mediaCanvas($break_md, $fields_md); // Штрина полотна + выравнивание по середине + отступы справа слева
+    // width: 100%;
+    // height: 100%;
+}
+
+.photo {
+  // width: 700rem;
+  margin: 0 auto;
+  background: url("../img/default/default-album.jpg") center / cover no-repeat;
+
+  &-block {
+    padding: 0px 0px 58% 0px;
+    overflow: hidden;
+    position: relative;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+}
+
+// .parent {
+//   @include row-flex(); /* @include row-float(); */
+// }
+
+// .child {
+//   @include col(); /* Ставим элемент по колонке. @include col-float() */
+//   @include size(3); /* Задаём размер элементу. На десктопе элементы будут занимать по 4 колонки */
+//   @include size-md(6); /* На планшете по 2 */
+//   @include size-sm(10); /* На телефоне по 10 */
+//   @include size-xs(12); /* На телефоне с маленьким экраном по 12 */
+// }
+

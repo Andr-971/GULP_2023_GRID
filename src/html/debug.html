@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<div class="debug moduleGrid">
+    <div>
+        <div>
+            <!-- Колонки. Если колонок 12, то дивов будет тоже 12 -->
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    const gridHtml = document.querySelector('.debug');
+    const body = document.querySelector('body');
+
+    function modulesGrid(event) {
+        gridHtml.classList.toggle("moduleGrid");
+    }
+    function modulesGridKey(event) {
+        if(event.keyCode == 18 && event.ctrlKey) {
+            gridHtml.classList.toggle("moduleGrid");
+        }
+    }
+    function modulesGridMouse(event) {
+        if (event.which == 2) {
+            gridHtml.classList.toggle("moduleGrid");
+        }
+    }
+
+    // body.addEventListener("dblclick", modulesGrid);
+    addEventListener("keydown", modulesGridKey);
+    body.addEventListener("mousedown", modulesGridMouse);
+</script>

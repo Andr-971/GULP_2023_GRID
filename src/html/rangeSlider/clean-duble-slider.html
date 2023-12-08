@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<div class="slider-container g_container">
+    <div class="slider" data-maxleght="10000">
+        <div class="item-left" data-num-val="300"></div>
+        <div class="item-right" data-num-val="8000"></div>
+    </div>
+    <div class="appoint-block">
+        <div class="appoint left-slider">
+            <input type="number" value="" min="0" max="10000" placeholder="300" name="numLeft" class="num-left" oninput="this.value = Math.abs(this.value)">
+            <button class="btn-left">Установить</button>
+        </div>
+        <div class="appoint right-slider">
+            <input type="number" value="" min="0" max="10000" name="numRight" placeholder="800" class="num-right" oninput="this.value = Math.abs(this.value)">
+            <button class="btn-right">Установить</button>
+        </div>
+    </div>
+</div>

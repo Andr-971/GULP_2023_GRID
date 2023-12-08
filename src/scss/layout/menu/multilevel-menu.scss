@@ -1,0 +1,394 @@
+
+@media (min-width: 768.98px) {
+
+    // .header__menu
+    .header__menu {
+        margin-left: auto;
+    }
+
+    // .menu
+    .menu {
+        // .menu__list
+        &__list {
+            display: flex;
+        }
+        // .menu__item
+        &__item {
+            padding-bottom: 19px;
+            position: relative;
+            display: flex;
+            align-items: center;
+
+            &:not(:last-child) {
+                @include adaptiveValue("margin-right", 30, 5, 2);
+            }
+
+            // .menu__item_level
+            &_level {
+                padding: 5px 0px;
+            }
+
+            // .menu__item__link
+            &__link {
+                @include adaptiveFont(14, 6);
+                text-transform: uppercase;
+            }
+        }
+
+        // .menu__level --------------------------------
+        // &__level {
+        //     position: relative;
+
+        //     &:hover .list-level__1 {
+        //         transition: all 0.3s ease 0s;
+        //         transform: scale(1, 1);
+        //     }
+        // }
+        .list-level__1 {
+            position: absolute;
+            @include adaptiveValue(top, 35, 30, 2);
+            // left: -100px;
+            @include adaptiveValue(left, -100, 80, 1);
+            // width: 200px;
+            @include adaptiveValue(width, 200, 120, 2);
+            background-color: #d9f3f1fb;
+            padding: 10px;
+            transform: scale(0, 0);
+        }
+
+        .list-level__2 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            // width: 250px;
+            @include adaptiveValue(width, 250, 160, 2);
+            background-color: #d9f3f1fb;
+            padding: 10px;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .list-level__3 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            // width: 250px;
+            @include adaptiveValue(width, 250, 160, 2);
+            // width: 100%;
+            background-color: #d9f3f1fb;
+            padding: 10px;
+            visibility: hidden;
+        }
+
+        .list-level__4 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            // width: 250px;
+            @include adaptiveValue(width, 250, 160, 2);
+            background-color: #d9f3f1fb;
+            padding: 10px;
+            visibility: hidden;
+        }
+    }
+
+    // .is-pc
+    .is-pc {
+        .arrow-triangle {
+                display: none;
+            }
+        .menu__level:hover .list-level__1 {
+            transition: all 0.3s ease 0s;
+            transform: scale(1, 1);
+            z-index: 10;
+        }
+
+        .item__level_1:hover .list-level__2 {
+            transition: all 0.3s ease 0s;
+            // transform: translate(190px, 0px);
+            transform: translate(65%, 0px);
+            visibility: visible;
+            pointer-events: all;
+            z-index: 9;
+        }
+
+        .item__level_2:hover .list-level__3 {
+            transition: all 0.3s ease 0s;
+            // transform: translate(240px, 0px);
+            transform: translate(95%, 0px);
+            visibility: visible;
+            z-index: 8;
+        }
+
+        .item__level_3:hover .list-level__4 {
+            transition: all 0.3s ease 0s;
+            // transform: translate(240px, 0px);
+            transform: translate(95%, 0px);
+            visibility: visible;
+            z-index: 7;
+        }
+    }
+
+    
+}
+
+.is-mobile {
+    // Кнопка треугольник
+    .arrow-triangle {
+        display: block;
+        width: 0px;
+        height: 0px;
+        border-left: 7px solid transparent;
+        border-right: 7px solid transparent;
+        border-top: 7px solid #000;
+        border-radius: 10px;
+        transition: trasform 0.3s ease 0s;
+    }
+
+    // .menu__level,
+    .menu__item_level {
+        display: flex;
+        align-items: center;
+    }
+
+    .menu__link,
+    .menu__link_level {
+        padding-right: 10px;
+        // @include adaptiveValue(padding-right, 7, 5, 1);
+    }
+
+    //---------------------- Открытие подменю -----------
+    .list-level__1.is-active {
+        transition: all 0.3s ease 0s;
+        transform: scale(1, 1);
+    }
+    .list-level__2.is-active {
+        transition: all 0.3s ease 0s;
+        // transform: translate(190px, 0px);
+        transform: translate(65%, 0px);
+        visibility: visible;
+        pointer-events: all;
+    }
+    .list-level__3.is-active {
+        transition: all 0.3s ease 0s;
+        // transform: translate(240px, 0px);
+        transform: translate(95%, 0px);
+        visibility: visible;
+    }
+    .list-level__4.is-active {
+        transition: all 0.3s ease 0s;
+        // transform: translate(240px, 0px);
+        transform: translate(95%, 0px);
+        visibility: visible;
+    }
+    //----------------------------------
+
+    .rotate {
+        transform: rotate(180deg);
+    }
+}
+
+@media (max-width: 768.98px) {
+    // Открыть мобильное меню
+    .menu.mobile-active {
+        // transform: translate(0%, 0px);
+        left: 0;
+    }
+    .header {
+
+        &__burger-btn {
+            // width: 30px;
+            // height: 30px;
+            // display: flex;
+            // align-items: center;
+            background: transparent;
+            // margin-left: 10px;
+            // margin-left: auto;
+        
+            // &:hover {
+            //   & svg {
+            //     & path {
+            //       transition: $standartTrans;
+            //       fill: rgb(11, 11, 193);
+            //     }
+            //   }
+            // }
+            // Кнопка бургер CSS --------------------------------
+            .menu__icon {
+                z-index: 5;
+                display: block;
+                position: relative;
+                width: 30px;
+                height: 20px;
+                cursor: pointer;
+            }
+        
+            .menu__icon span,
+            .menu__icon::before,
+            .menu__icon::after {
+                position: absolute;
+                left: 0;
+                height: 20%;
+                width: 100%;
+                border-radius: 3px;
+                transition: all 0.3s ease 0s;
+                background-color: #04049a;
+            }
+        
+            .menu__icon::before,
+            .menu__icon::after {
+                content: "";
+            }
+        
+            .menu__icon::before {
+                top: 0;
+            }
+        
+            .menu__icon span {
+                top: 50%;
+                transform: scale(1) translate(0px, -50%);
+            }
+        
+            .menu__icon::after {
+                bottom: 0;
+                background-color: #04049a;
+            }
+        
+            // кнопка крестик мобильного меню
+            .menu__icon.mobile-active span {
+                transform: scale(0) translate(0px, -50%);
+            }
+        
+            .menu__icon.mobile-active::before,
+            .menu__icon.mobile-active::after {
+                background-color: red;
+            }
+        
+            .menu__icon.mobile-active::before {
+                top: 50%;
+                transform: rotate(-45deg) translate(0px, -50%);
+            }
+        
+            .menu__icon.mobile-active::after {
+                bottom: 50%;
+                transform: rotate(45deg) translate(0px, 50%);
+            }
+        }
+    }
+    // Выезжающая панель слева
+    .header__menu {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: rgb(27, 125, 206); //$whiteColor;
+        // transform: translate(-100%, 0px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        opacity: .95;
+        transition: left 0.3s ease 0s;
+        @include adaptiveValue(margin-top, 100, 50, 2);
+        overflow: auto;
+    }
+
+    .menu {
+
+        &__list {
+            padding: 25px;
+        }
+        &__item {
+            padding: 30px 0px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            &_level {
+                justify-content: space-between;
+                padding: 5px 0px;
+                flex-wrap: wrap;
+            }
+        }
+
+        &__link {
+            @include adaptiveFont(36, 30);
+            font-weight: 700;
+            color: #fff;
+            font-size: 20px;
+        }
+        &__list_level {
+            flex-direction: column;
+            display: none; 
+            margin-top: 10px;
+            font-size: 12px;
+        }
+        // Кнопка треугольник
+        .arrow-triangle {
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 10px solid #fff;
+            border-radius: 10px;
+        }
+
+        // Подменю меню
+        .list-level__1 {
+            flex: 1 1 100%;
+            background-color: #d9f3f1fb;
+            padding: 10px;
+            // overflow: auto;
+        }
+
+        .list-level__2 {
+            flex: 1 1 100%;
+            background-color: #d9f3f1fb;
+            padding: 10px;
+            transform: translate(0px, 0px);
+        }
+
+        .list-level__3 {
+            flex: 1 1 100%;
+            background-color: #d9f3f1fb;
+            padding: 10px;
+
+        }
+
+        .list-level__4 {
+            flex: 1 1 100%;
+            background-color: #d9f3f1fb;
+            padding: 10px;
+        }
+
+    }
+
+    //---------------------- Открытие подменю -----------
+    .is-mobile {
+        .list-level__1.is-active {
+                transition: display 0.3s ease 0s;
+                display: block;
+            }
+        
+            .list-level__2.is-active {
+                transition: all 0.3s ease 0s;
+                transform: translate(0px, 0px);
+                display: block;
+            }
+        
+            .list-level__3.is-active {
+                transition: all 0.3s ease 0s;
+                transform: translate(0px, 0px);
+                display: block;
+            }
+        
+            .list-level__4.is-active {
+                transition: all 0.3s ease 0s;
+                transform: translate(0px, 0px);
+                display: block;
+            }
+    }
+    
+
+    //----------------------------------
+    
+}

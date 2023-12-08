@@ -1,0 +1,29 @@
+
+$base: $maxWidth; // Максимальная ширина
+$minbase: $minWidth;    // Минимальная ширина  
+
+@function vw($value) {
+    @return $value / $base * 100vw;
+}
+
+@function px($value) {
+    // @return $value / $base * 100vw;
+    @return calc(100vw / $base * $value);
+}
+
+@function apx($minValue, $maxValue) {
+    $min: $minValue + px;
+    $max: $maxValue + px;
+    @return clamp($min, px($maxValue), $max);
+}
+
+@function vmin($value) {
+    @return $value / $minbase * 100vmin;
+}
+
+@function border($size: 1px, $color: #000) {
+    @return $size solid $color;
+}
+@function border-radius($size: 8px) {
+    @return $size;
+}

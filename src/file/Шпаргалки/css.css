@@ -1,0 +1,71 @@
+
+/* Выравнивание по центру =========================================================================*/
+
+.parent {
+    /* position: relative */
+    position: relative;
+
+    width: 80%;
+    height: 300px;
+    /* display: flex */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* display: grid; */
+    display: grid;
+    place-items: center;
+}
+.children {
+    /* position: relative */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Высоту в % можно задать, если у родителя есть какая-то нибыло высота */
+    width: 80%;
+    height: 50%;
+    /*? Выравнивание по центру горизонтали */
+    /* Если у родителя установлен display: flex, grid; больше ни чего не нужно */
+    margin: 0 auto;
+}
+
+/* DIV Контейнер с текстом */
+.container {
+    height: 300px;
+    /*? Выравнивание по центру горизонтали */
+    text-align: center;
+    /*? Выравнивание по центру вертикали */
+    /* Работает только в паре делает блок ячейкой */
+    display: table-cell;
+    vertical-align: middle;
+    /* Зная высоту контейнера(слайдер) и если одна строка */
+    line-height: 300px;
+    /* display: flex */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Карточки на флексах ============================================================================== */
+
+.width-canvas {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+.grid-card {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -15px;
+    margin-right: -15px;
+    padding: 0;
+}
+.item-card {
+    width: 33.3333%;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-bottom: 30px;
+}
+.card {
+    padding: 20px;
+    min-height: 100%;
+}

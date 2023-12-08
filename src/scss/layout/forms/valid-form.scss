@@ -1,0 +1,133 @@
+.form {
+    max-width: 50%;
+    margin: 20px auto;
+    padding: 25px;
+    box-shadow: 5px 3px 5px 3px rgba(0, 0, 0, .7);
+    border-radius: 7px;
+}
+
+.h2 {
+    padding: 10px 0px;
+    text-align: center;
+    font-size: 23px;
+    text-transform: uppercase;
+    font-weight: 700;
+    background-color: #ccc;
+    border-radius: 7px;
+    margin-bottom: 30px;
+}
+
+.form-field {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0px;
+}
+.form label {
+    font-style: italic;
+    color: #ccc;
+}
+.form input {
+    border: #ccc solid 2px;
+    border-radius: 7px;
+    padding: 8px 20px;
+    font-size: 14px;
+    width: 50%;
+}
+.form textarea {
+    border: #ccc solid 2px;
+    border-radius: 7px;
+    font-size: 14px;
+    padding: 8px 0px 0px 20px;
+    width: 50%;
+    height: 80px;
+}
+.form textarea.successEnter {
+    border: 2px solid #05be05;
+    // background-color: rgb(5, 190, 5, .3);
+    // color: #05be05;
+}
+.form button {
+    width: 100%;
+    background-color: #1563f4;
+    color: #fff;
+    padding: 10px 0px;
+    text-align: center;
+    border-radius: 7px;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-top: 10px;
+}
+.smallHint {
+    position: absolute;
+    top: -35px;
+    left: 0px;
+    margin-left: 50%;
+    color: #1563f4;
+}
+.pass {
+    top: -60px;
+}
+.email {
+    top: -35px;
+}
+.username {
+    top: -35px;
+}
+
+#form .sign {
+    color: red;
+    position: absolute;
+    line-height: 75%;
+    top: 0px;
+    left: 0px;
+}
+#form .successSign {
+    color: #05be05;
+    
+}
+#form label .text {
+    color: #ccc;
+    position: absolute;
+    top: 0px;
+    left: 11px;
+}
+#form .progress {
+    position: absolute;
+    bottom: -30px;
+    left: 0px;
+    margin-left: 50%;
+    z-index: 10;
+}
+#form .error {
+    color: red;
+}
+#form .processing {
+    color: #ecdd03;
+}
+#form .success {
+    color: #05be05;
+}
+#form .hidePass, .hidePassduble {
+    position: absolute;
+    right: 12px;
+    bottom: 5.5px;
+    cursor: pointer;
+}
+.smallHint.userlogin {
+    position: absolute;
+    top: -45px;
+    left: 0px;
+}
+#form .error-form {
+    background-color: #fff;
+    padding: 8px;
+    box-shadow: 5px 3px 5px 3px rgba(0, 0, 0, .5);
+    border-radius: 7px;
+}
+.form input.successEnter {
+    border: 2px solid #05be05;
+    background-color: rgb(5, 190, 5, .3);
+    color: #05be05;
+}

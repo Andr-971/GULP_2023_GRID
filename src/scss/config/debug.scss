@@ -1,0 +1,4 @@
+.debug {
+    @include debug(hsla(190, 86%, 97%, 0.3), 1px solid rgb(9, 26, 186));
+    z-index: 100;
+}

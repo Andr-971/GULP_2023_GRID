@@ -1,0 +1,53 @@
+
+.spollers {
+    margin: 20px auto;
+    @include size(9);
+}
+.spoller-block {
+
+}
+
+.block {
+    margin: 20px 0px;
+    ._init {
+        .block__title {
+            ::before, ::after {
+                
+            }            
+        }
+    }
+}
+
+.spoller-item {
+    position: relative;
+    box-shadow: 5px 3px 5px 3px rgba(0, 0, 0, .7);
+    border-radius: 10px;
+    padding: 15px;
+    .block__title {
+        font-weight: 700;
+        font-size: 18px;
+        padding: 10px 0px;
+        width: 100%;
+        text-align: left;
+        background-color: #fff;
+    }
+    &__text {
+        margin-top: 15px;
+        line-height: 130%;
+    }
+}
+._init .block__title::after, .block__title::before {
+    content: "";
+    top: 35px;
+    right: 16px;
+    width: 20px;
+    height: 2px;
+    position: absolute;
+    background-color: #000;
+}
+._init .block__title::after {
+    transform: rotate(-90deg);
+}
+._init.block__title._active::after {
+    transform: rotate(0deg);
+}

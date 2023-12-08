@@ -1,0 +1,127 @@
+
+/*
+percent1=(sliderLeft.value / sliderMaxValue) * 100;
+percent2=(sliderRight.value / sliderMaxValue) * 100;
+*/
+$sliderLeftValue: 25;
+$sliderRightValue: 75;
+$sliderMaxValue: 100;
+
+
+@function levelPercent() {
+    @return ($sliderLeftValue / $sliderMaxValue * 100);
+}
+
+
+$levelPercent: calc(($sliderLeftValue / $sliderMaxValue) * 100);
+$rightPercent: calc(($sliderRightValue / $sliderMaxValue) * 100);
+
+.test {
+    z-index: levelPercent();
+    z-index: $levelPercent;
+}
+
+.range-sliderDuble {
+    @include size(9);
+    margin: 20px auto;
+}
+
+.range-sliderDuble__block {
+    position: relative;
+    height: 20px;
+}
+
+.sliderDuble {
+    appearance: none;
+    width: 100%;
+    height: 12px;
+    border-radius: 5px;
+    position: absolute;
+    // background: #a4a4a4;
+    outline: none;
+}
+
+.slider-track {
+    height: 12px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    z-index: 5;
+    background: linear-gradient(to right, #dadae5 25%, #3264fe 25%, #3264fe 75%, #dadae5 75%);
+}
+
+.sliderDuble:active::-webkit-slider-thumb {
+    background-color: #fff;
+}
+
+.sliderDuble input {
+    pointer-events: none;
+    position: absolute;
+    overflow: hidden;
+    left: 25%;
+    top: 15px;
+    width: 50%;
+    outline: none;
+    height: 12px;
+    margin: 0;
+    padding: 0;
+}
+
+.sliderDuble::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 30px;
+    border: 2px solid #000;
+    background: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    pointer-events: auto;
+    pointer-events: all;
+    position: relative;
+    z-index: 10;
+    outline: 0;
+}
+
+.sliderDuble::-moz-range-thumb {
+    width: 20px;
+    height: 30px;
+    border: 2px solid #000;
+    background: #fff;
+    cursor: pointer;
+    pointer-events: auto;
+    pointer-events: all;
+    position: relative;
+    -moz-appearance: none;
+    width: 9px;
+    z-index: 10;
+}
+
+.sliderDuble input::-moz-range-track {
+    -moz-appearance: none;
+    position: relative;
+    background: none transparent;
+    z-index: -1;
+    border: 0;
+
+}
+
+.sliderDuble input:last-of-type::-moz-range-track {
+    -moz-appearance: none;
+    background: none transparent;
+    pointer-events: auto;
+    border: 0;
+}
+
+.sliderDuble input[type=range]::-moz-focus-outer {
+    border: 0;
+}
+
+.text-output {
+    padding: 10px 0px;
+    font-style: italic;
+}
+

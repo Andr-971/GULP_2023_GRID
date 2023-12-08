@@ -1,0 +1,29 @@
+
+// .contact
+.contact {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    @include adaptiveValue("margin-left", 50, 5, 0);
+
+    // .contact__phone
+    &__phone {
+        @include adaptiveValue("margin-bottom", 10, 5, 0);
+        font-weight: 700;
+        @include adaptiveFont(18, 14);
+        transition: $standartTrans;
+
+        &:hover {
+            color: $redColor;
+        }
+    }
+
+    // .contact__time
+    &__time {
+        @include adaptiveFont(14, 10);
+    }
+
+    @media (max-width: 768.98px) {
+        display: none;
+    }
+}

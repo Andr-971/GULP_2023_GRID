@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<section class="g_container">
+    <form active="" id="form" class="form" name="form">
+        <h2 class="h2">Обработка формы</h2>
+        <div class="form-field">
+            <label for="username">Ваше Имя:</label>
+            <input type="text" name="username" id="username" placeholder="Введите здесь Ваше имя" data-rule="username" title="Введите имя от 3 до 10 кирилических букв"/>
+        </div>
+        <div class="form-field">
+            <label for="login">Ваш логин:</label>
+            <input type="text" name="login" id="login" placeholder="Введите здесь логин" data-rule="userlogin" title="Введите латинские буквы, знаки +=-_. цифры не мене 4 не более 15 символов"/>
+        </div>
+        <div class="form-field">
+            <label for="email">Ваша электронная почта:</label>
+            <input type="text" name="email" id="email" placeholder="Введите Вашу почту" data-rule="email" title="Введите Вашу электронную почту"/>
+        </div>
+        <div class="form-field">
+            <label for="phone">Ваша телефонный номер:</label>
+            <input type="text" name="phone" id="phone" placeholder="Введите Ваш телефон" data-rule="telephone" data-first="+7" title="Вводите только цифры Вашего телефона"/>
+        </div>
+        <div class="form-field">
+            <label for="password">Придумайте пароль:</label>
+            <input type="password" name="password" id="password" placeholder="Введите пароль" data-rule="pass" title="Пароль должен иметь: знаки, латинские буквы в разных регистрах, цифры, не менее 6 и не более 20"/>
+        </div>
+        <div class="form-field">
+            <label for="password2">Подтверждение пароля:</label>
+            <input type="password" id="password2" placeholder="Введите пароль снова" data-rule="passduble" title="Повторите пароль"/>
+        </div>
+        <div class="form-field">
+            <label for="textarea">Ваше сообщение:</label>
+            <textarea name="textarea" id="textarea" data-rule="textarea" title="Вводите только кирилические буквы и знаки препинания" placeholder="Напишите нам"></textarea>
+        </div>
+        <button type="submit" id="button-form">Зарегистрироваться</button>
+    </form>
+</section>
+

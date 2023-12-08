@@ -1,0 +1,141 @@
+
+/*
+Основные стили: 
+Они заставляют слайд -шоу работать
+*/
+// Размер экрана слайдера
+#slides {
+    position: relative;
+    height: 300px;
+    padding: 0px;
+    margin: 0px;
+    list-style-type: none;
+}
+
+//----------------------------- Появление и исчезновение с затуханием -----------------
+// Стили для слайдера по умолчанию скрыт
+.slide {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 1;
+
+    -webkit-transition: opacity 1s;
+    -moz-transition: opacity 1s;
+    -o-transition: opacity 1s;
+    transition: opacity 1s;
+}
+
+// Появление слайдера
+
+.showing {
+    opacity: 1;
+    z-index: 2;
+}
+//----------------------------- Конец появление и исчезновение с затуханием -----------------
+
+
+//----------------------------- Выдвижение с лева на право -----------------
+// Стили для слайдера по умолчанию скрыт
+// .slide {
+//     position: absolute;
+//     left: 0px;
+//     transform: translate(-100vw, 0%);
+//     // top: 0px;
+//     width: 100%;
+//     height: 100%;
+//     opacity: 0;
+//     z-index: 1;
+
+    
+// }
+
+// // Появление слайдера
+// .showing {
+//     transition: transform 0.5s ease 0s;
+//     transform: translate(0vw, 0%);
+//     opacity: 1;
+//     z-index: 2;
+
+//     // -webkit-transition: opacity 1s;
+//     // -moz-transition: opacity 1s;
+//     // -o-transition: opacity 1s;
+//     // transition: opacity 1s;
+// }
+//----------------------------- Конец выдвижение с лева на право -----------------
+
+.controls {
+    display: none;
+}
+
+/*
+Несущественные стили: 
+Просто для внешнего вида; изменить все, что вы хотите
+*/
+
+.slide {
+    font-size: 40px;
+    // padding: 40px;
+    box-sizing: border-box;
+    background: #333;
+    color: #fff;
+
+    background-size: cover;
+}
+
+/* http://unrestrictedstock.com/wp-content/uploads/snowy-winter-vignette-bokeh-night-snow-falling-free-stock-photo.jpg */
+.slide:nth-of-type(1) {
+    background-color: red;
+    // background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/snowy-winter-vignette-bokeh-night-snow-falling-free-stock-photo.jpg');
+}
+
+/* http://www.dawghousedesignstudio.com/wp-content/uploads/2010/01/25/free-stock-photos-1.jpg */
+.slide:nth-of-type(2) {
+    background-color: orange;
+    // background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/free-stock-photos-1.jpg');
+}
+
+/* http://www.stockfreeimages.com/static/homepage/waterfall-free-stock-photo-244915.jpg */
+.slide:nth-of-type(3) {
+    background-color: green;
+    // background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/waterfall-free-stock-photo-244915.jpg');
+}
+
+.controls {
+    background: #0895ec;
+    color: #fff;
+    border: none;
+    padding: 15px 0px;
+    font-size: 10px;
+    cursor: pointer;
+    border: 2px solid #fff;
+    margin: 10px 0px 0px 10px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+.controls:hover,
+.controls:focus {
+    background: #eee;
+    color: #333;
+}
+
+.slider-block {
+    position: relative;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // position: absolute;
+    // left: 0px;
+    // top: 0px;
+    // z-index: 3;
+    // font-size: 0px;
+    // display: none;
+    
+}

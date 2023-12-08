@@ -1,0 +1,107 @@
+@import "../smart-grid/smart-grid";
+
+// ?adaptive property
+
+// $maxWidth: 1920;
+// $maxWidthContainerAdap: 1200; // Медиа запрос: максимальная ширина
+$minWidthScrinPx: 390px;
+
+@mixin widthСanvas($canvas: $maxWidthContainer, $indent: $fields) {
+  max-width: calc($canvas + $indent * 2);
+  padding-left: $indent;
+  padding-right: $indent;
+  margin: 0px auto;
+}
+
+@mixin mediaCanvas($canvas: $break_lg, $indent: $fields) {
+  @media screen and (max-width: $canvas) {
+    max-width: calc($canvas + $indent * 2);
+    padding-left: $indent;
+    padding-right: $indent;
+    margin: 0px auto;
+  }
+}
+
+@mixin margin--($value: ($offset_one_side * -1)) {
+  margin-left: $value * -1;
+  margin-right: $value * -1;
+}
+
+@mixin margin-LR($value: ($offset_one_side)) {
+  margin-left: $value;
+  margin-right: $value;
+}
+
+@mixin mediaMax($max-width: $break_lg) {
+  @media screen and (max-width: $max-width) {
+    @content;
+  }
+}
+
+@mixin mediaMin($min-width: $break_lg) {
+  @media screen and (min-width: $min-width) {
+    @content;
+  }
+}
+
+@mixin display-flex($gap: 0px) {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: $gap;
+}
+
+@mixin test($property) {
+  #{$property}: $maxWidth $maxWidthContainerAdap;
+}
+
+@mixin adaptiveValue($property, $startSize, $minSize, $type: 2) {
+  $addSize: $startSize - $minSize;
+
+  @if $type==1 {
+    // Только если меньше контейнера
+    #{$property}: $startSize + px;
+
+    @media (max-width: #{$maxWidthContainerAdap + px}) {
+      #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - #{$minWidth + px}) / #{$maxWidthContainerAdap - $minWidth}));
+    }
+  }
+
+  @else if $type==2 {
+    // Только если больше, чем контейнер
+    #{$property}: $startSize + px;
+
+    @media (max-width: #{$maxWidthContainerAdap + px}) {
+      #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - #{$minWidth + px}) / #{$maxWidth - $minWidth}));
+    }
+  }
+
+  @else {
+    // Всегда
+    #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - #{$minWidth + px}) / #{$maxWidth - $minWidth}));
+  }
+}
+
+// *adaptive font-size
+@mixin adaptiveFont($pcSize, $mobSize) {
+  $addSize: $pcSize - $mobSize;
+  $maxWidthContainerAdaps: $maxWidth - $minWidth;
+  font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - #{$minWidth + px}) / #{$maxWidthContainerAdaps}));
+}
+
+// При установке smart-grid внести изменения
+//? node_modules/smart-grid/build.js
+
+//* str+="{{var}}maxWidth{{=}}"+resources.settings.container.maxWidthScreen+'{{;}}\n';
+//* str+='\n';
+//* str+="{{var}}minWidth{{=}}"+resources.settings.container.minWidthScreen+'{{;}}\n';
+//* str+='\n';
+//* str+="{{var}}maxWidthContainerAdap{{=}}"+resources.settings.container.maxWidthAdaptive+'{{;}}\n';
+//* str+='\n';
+
+//? gulp/config/config.js#settingsSmatrGrid#container:
+
+//* maxWidthScreen: "1920" /* Максимальная ширина экрана для адаптива*/
+//* minWidthScreen: "390" /* Минимальная ширина экрана для адаптива*/,*/
+//* maxWidthAdaptive: "1200" /* Максимальная ширина полотна для адаптива */

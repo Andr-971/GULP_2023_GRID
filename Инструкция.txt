@@ -1,0 +1,71 @@
+============================= Сборка GULP_2023_GRID =================================================================
+npm run smart-grid                          // Формирование smart-grid файла(После внесения необходимых настроек)
+npm run fonts-con                           // Конвертация и подключение шрифтов(Сначало удалить src/scss/config/fonts.scss)
+npm run img-res                             // Создание webp изображений, сжатие файлов изображений
+npm run svg-s                               // Создание SVG спрайта(Настройка названия файла gulp/config/config.js)
+npm run dev                                 // Задачи по вёрстке(html, scss, сервер) (оптимальное кол-во плагинов)
+npm run bul                                 // Запуск завершение работы по вёрстке(максимальное кол-во плагинов)
+npm run es6                                 // Запуск работ по работе с jsES6
+npm run es5                                 // Запуск работ по работе с jsES5
+npm run js-compess                          // Сжатие файла js(Указать название файла в gulp/config/config.js)
+npm run js-concat                           // Объединение файлов js(Указать название файлов в gulp/config/config.js)
+npm run zip                                 // Упаковка в zip архив из папки dist
+npm run ftp                                 // Отправка папки проекта на сервер
+
+============================== Документация Smart-Grid (scss) =================================================================
+С начала нам нужно настроить контейнер с сеткой:
+	.container {
+		@include wrapper(); // Штрина полотна + выравнивание по середине + отступы справа слева // @include
+	}
+В контейнере мы создаём элементы по сетке:
+	.parent {
+			@include row-flex(); /* @include row-float(); */
+			----------------------------- CSS --------------------------------
+			display: flex;
+			flex-wrap: wrap;
+			margin-left: -15px;
+			margin-right: -15px;
+		}
+		.child {
+			@include col(); /* Ставим элемент по колонке. @include col-float() */
+			@include size(3); /* Задаём размер элементу. На десктопе элементы будут занимать по 4 колонки */
+			@include size-md(6); /* На планшете по 2 */
+			@include size-sm(10); /* На телефоне по 10 */
+			@include size-xs(12); /* На телефоне с маленьким экраном по 12 */
+			----------------------------- CSS --------------------------------
+			box-sizing: border-box;
+			word-wrap: break-word;
+			margin-left: 15px;
+			margin-right: 15px;
+			width: calc(25% - 30px);
+		}
+Полезные функции:
+@include shift-left /* Отступ слева */
+
+@include shift-md-right /* Отступ справа на планшете */
+
+@include md-block({ font-size: 25px; }); /* CSS свойства на md планшете разрешении. */
+
+@include reset(); /* Cбрасывает стили браузера. Вставьте в начало кода препроцессора */
+
+--------------- При установке smart-grid внести изменения ---------------------------
+
+node_modules/smart-grid/build.js ----------------------------------
+
+str+="{{var}}maxWidth{{=}}"+resources.settings.container.maxWidthScreen+'{{;}}\n';
+str+='\n';
+str+="{{var}}minWidth{{=}}"+resources.settings.container.minWidthScreen+'{{;}}\n';
+str+='\n';
+str+="{{var}}maxWidthContainerAdap{{=}}"+resources.settings.container.maxWidthAdaptive+'{{;}}\n';
+str+='\n';
+------------------------------------------------------------------
+gulp/config/config.js#settingsSmatrGrid#container:
+
+maxWidthScreen: "1920" /* Максимальная ширина экрана для адаптива*/
+minWidthScreen: "390" /* Минимальная ширина экрана для адаптива*/,*/
+maxWidthAdaptive: "1200" /* Максимальная ширина полотна для адаптива */
+-------------------------------------------------------------------------
+
+
+
+

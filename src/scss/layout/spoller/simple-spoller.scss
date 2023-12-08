@@ -1,0 +1,52 @@
+
+.spollers {
+    @include size(9);
+    margin: 20px auto;
+}
+
+.spoller-item {
+    position: relative;
+    box-shadow: 5px 3px 5px 3px rgba(0, 0, 0, .5);
+    border-radius: 10px;
+    padding: 10px;
+    margin: 20px 0px;
+}
+
+.spoller-heading {
+    text-align: left;
+    width: 100%;
+    background-color: transparent;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    z-index: 5;
+    cursor: pointer;
+}
+
+.spoller-heading::before, .spoller-heading::after {
+    position: absolute;
+    content: "";
+    top: 28px;
+    right: 22px;
+    width: 20px;
+    height: 2px;
+    background-color: #000;
+}
+
+.spoller-heading::after {
+    transform: rotate(90deg);
+}
+
+.btn-active.spoller-heading::after {
+    transform: rotate(0deg);
+}
+.spoller-content.spoller-active {
+    display: block;
+}
+
+.spoller-content {
+    margin: 10px 0px 0px 0px;
+    padding: 10px;
+    line-height: 1.5;
+    display: none;
+}

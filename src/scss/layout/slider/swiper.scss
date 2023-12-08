@@ -1,0 +1,79 @@
+// Если это flex блок,  то добавить: min-width: 0;
+.swiper {
+    width: 70%;
+    margin: 20px auto;
+}
+/*
+* Автоширина
+*/
+.swiper-slide {
+    width: auto;
+}
+/*
+* Мультирядность
+*/
+// .slider {
+//     height: 700px;
+// }
+// .swiper-slide {
+//     height: calc((100% - 30px) / 2);
+//     overflow: hidden;
+// }
+/*
+* Стрелки на слайдере
+*/
+.swiper-button-prev::after, .swiper-button-next::after {
+    color: #fff;
+    font-size: 40px;
+}
+/*
+* Буллеты
+*/
+.swiper-pagination-bullet {
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    font-size: 14px;
+    background-color: #fff;
+}
+/*
+* Фракции
+*/
+.swiper-pagination-fraction {
+    font-size: 20px;
+}
+.swiper-pagination-current, .swiper-pagination-total, .swiper-pagination-fraction, .fr-text {
+    color: #fff;
+}
+.fr-text {
+    font-style: italic;
+    font-size: 18px;
+}
+/*
+* Прогресс Бар
+*/
+// .swiper-pagination-progressbar-fill {
+
+// }
+.swiper-horizontal>.swiper-pagination-progressbar,
+.swiper-pagination-progressbar.swiper-pagination-horizontal {
+    height: var(--swiper-pagination-progressbar-size, 10px);
+    top: 98%;
+}
+.swiper-scrollbar {
+    background: transparent;
+}
+/*
+* Скрол
+*/
+.swiper-horizontal>.swiper-scrollbar,
+.swiper-scrollbar.swiper-scrollbar-horizontal {
+    bottom: var(--swiper-scrollbar-bottom, 10px);
+}
+.swiper-scrollbar-drag {
+    background-color: #fff;
+    height: 8px;
+}
+
+
+
